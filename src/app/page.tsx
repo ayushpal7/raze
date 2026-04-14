@@ -10,8 +10,6 @@ import {
   Crown,
   ListTree,
   Sparkles,
-  ArrowUpRight,
-  Gauge,
   Globe2,
   ShieldCheck,
   Stars,
@@ -233,62 +231,6 @@ export default function Home() {
               <InfoTile icon={ShieldCheck} title="Protection" text="Antinuke and whitelist controls for secure moderation." />
               <InfoTile icon={Sparkles} title="Giveaways" text="Clean giveaway flow with strict duration handling." />
               <InfoTile icon={Globe2} title="Automation" text="Automod, verification, and logging designed for modern Discord servers." />
-              <InfoTile icon={Crown} title="Fun Mode" text="Anime GIF-driven roleplay and rating responses." />
-            </div>
-          </motion.div>
-        </motion.section>
-
-        <section id="overview" className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="panel neon-border cut-corner rounded-[32px] p-6 md:p-8">
-            <div className="flex items-center gap-3">
-              <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-3">
-                <Gauge className="h-5 w-5 text-cyan-200" />
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.4em] text-cyan-200/70">Core identity</p>
-                <h3 className="text-2xl font-semibold text-white">What RaZe is</h3>
-              </div>
-            </div>
-
-            <p className="mt-5 text-sm leading-7 text-slate-300 md:text-base">
-              RaZe is a Discord bot focused on protection, giveaway automation, automod, logging, and lightweight fun commands. It is designed for servers that want a sharp, high-performance assistant with a futuristic feel.
-            </p>
-
-            <div>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <InfoChip label="Developer" value="Ayush Pal" />
-                <InfoChip label="Website" value="ayush-pal.me" />
-                <InfoChip label="Primary focus" value="Security and automation" />
-                <InfoChip label="Style" value="Cyber landing page" />
-              </div>
-            </div>
-          </div>
-
-          <div className="panel neon-border cut-corner rounded-[32px] p-6 md:p-8">
-            <div className="flex items-center gap-3">
-              <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-3">
-                <ArrowUpRight className="h-5 w-5 text-cyan-200" />
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.4em] text-cyan-200/70">Quick links</p>
-                <h3 className="text-2xl font-semibold text-white">Open the official profile</h3>
-              </div>
-            </div>
-
-            <a
-              href="https://ayush-pal.me"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 flex items-center justify-between rounded-[24px] border border-cyan-300/20 bg-white/5 px-5 py-4 text-sm text-cyan-100 transition hover:border-cyan-300/35 hover:bg-cyan-300/10"
-            >
-              <span>ayush-pal.me</span>
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-
-            <div className="mt-5 rounded-[24px] border border-white/8 bg-black/20 p-5">
-              <p className="text-xs uppercase tracking-[0.35em] text-slate-400">Bot promise</p>
-              <p className="mt-3 text-sm leading-7 text-slate-300">
-                Fast moderation, clean automation, and a presentation that feels like a command center instead of a generic bot page.
               </p>
             </div>
           </div>
@@ -363,15 +305,6 @@ function InfoTile({
   text: string;
 }) {
   return (
-    <div className="rounded-[24px] border border-white/8 bg-black/20 p-5 transition hover:border-cyan-300/25 hover:bg-cyan-300/5">
-      <div className="flex items-center gap-3">
-        <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-3">
-          <Icon className="h-4 w-4 text-cyan-200" />
-        </div>
-        <h4 className="text-base font-semibold text-white">{title}</h4>
-      </div>
-      <p className="mt-4 text-sm leading-6 text-slate-300">{text}</p>
-    </div>
   );
 }
 
