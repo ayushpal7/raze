@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CyberPanel } from "@/components/CyberPanel";
+import { CyberPanel } from "../components/CyberPanel";
 import { Shield, Gift, Zap, Terminal, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
