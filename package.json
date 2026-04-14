@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "next": "14.x",
+    "react": "18.x",
+    "react-dom": "18.x",
+    "framer-motion": "latest",
+    "lucide-react": "latest",
+    "typescript": "latest",
+    "tailwindcss": "latest"
+  }
+}
