@@ -13,9 +13,9 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RaZe | Cyber Dashboard",
+  title: "RaZe | Discord Bot Landing Page",
   description:
-    "Futuristic cyber-dashboard for the RaZe Discord bot with antinuke, giveaways, automod, and developer info.",
+    "A futuristic landing page for the RaZe Discord bot with bot information, features, and developer profile.",
 };
 
 export default function RootLayout({
