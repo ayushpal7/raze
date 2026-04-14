@@ -1,18 +1,22 @@
 "use client";
 
 import type { ComponentType } from "react";
+import razePfp from "../../raze-pfp.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Bot,
   Code2,
   Crown,
+  ListTree,
   Sparkles,
   ArrowUpRight,
   Gauge,
   Globe2,
   ShieldCheck,
   Stars,
+  Terminal,
+  Users,
 } from "lucide-react";
 
 const stats = [
@@ -20,6 +24,114 @@ const stats = [
   { label: "Uptime", value: "99.99%" },
   { label: "Core Modules", value: "4" },
   { label: "Status", value: "Online" },
+];
+
+const commandGroups = [
+  {
+    title: "Antinuke",
+    icon: ShieldCheck,
+    description: "Core anti-nuke protection and status controls.",
+    commands: [".antinuke", ".antinuke enable", ".antinuke disable", ".antinuke status"],
+  },
+  {
+    title: "Whitelist",
+    icon: Users,
+    description: "Trusted-user management for protected server operations.",
+    commands: [".whitelist", ".whitelist add <@user>", ".whitelist remove <@user>", ".whitelist show"],
+  },
+  {
+    title: "Antiraid",
+    icon: ShieldCheck,
+    description: "Anti-raid setup and protection utilities.",
+    commands: [".antiraid", ".arsetup"],
+  },
+  {
+    title: "Automod",
+    icon: Bot,
+    description: "Automated moderation and configuration controls.",
+    commands: [".automod", ".automod enable", ".automod disable", ".amsetup"],
+  },
+  {
+    title: "Fun & Roleplay",
+    icon: Crown,
+    description: "Rate commands and anime GIF roleplay actions.",
+    commands: [
+      "Rates: gay, lesbian, cute, chutiya, horny, tharki",
+      "Roleplay: kiss, pat, kill, bite, punch",
+    ],
+  },
+  {
+    title: "Giveaway",
+    icon: Sparkles,
+    description: "Giveaway lifecycle controls and configuration.",
+    commands: [".gconfig", ".gend", ".glist", ".greroll", ".gstart"],
+  },
+  {
+    title: "Information",
+    icon: ListTree,
+    description: "General bot and server information commands.",
+    commands: [".help", ".botinfo", ".invite", ".ping", ".uptime"],
+  },
+  {
+    title: "Logging",
+    icon: Terminal,
+    description: "Event logging configuration and status controls.",
+    commands: [
+      ".logging enable - Enable logging",
+      ".logging disable - Disable logging",
+      ".logging status - View current configuration",
+      ".logging setup - Configure channels per event group",
+    ],
+  },
+  {
+    title: "Moderation",
+    icon: ShieldCheck,
+    description: "Full moderation toolkit for active server management.",
+    commands: [
+      ".ban",
+      ".hide",
+      ".hideall",
+      ".kick",
+      ".list",
+      ".lock",
+      ".lockall",
+      ".timeout",
+      ".nickname",
+      ".purge",
+      ".purgebots",
+      ".role",
+      ".rrole",
+      ".steal",
+      ".unban",
+      ".unhide",
+      ".unhideall",
+      ".unlock",
+      ".unlockall",
+      ".untimeout",
+    ],
+  },
+  {
+    title: "Premium",
+    icon: Stars,
+    description: "Premium access and server enhancement utilities.",
+    commands: [".antialt", ".autorole", ".massrole", ".resetserveravatar", ".setserveravatar"],
+  },
+  {
+    title: "Util",
+    icon: Globe2,
+    description: "Utility commands for profiles, reporting, and stats.",
+    commands: [".avatar", ".banner", ".prefix", ".report", ".serverinfo", ".stats", ".userinfo"],
+  },
+  {
+    title: "Verification",
+    icon: Terminal,
+    description: "Verification system setup and status controls.",
+    commands: [
+      ".verification setup - Set up verification",
+      ".verification disable - Remove verification system",
+      ".verification status - View current status",
+    ],
+  },
 ];
 
 const fadeUp = {
@@ -54,7 +166,7 @@ export default function Home() {
                   DISCORD BOT
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
-                  A futuristic Discord automation bot built for protection, giveaways, moderation, and clean roleplay interactions.
+                  A futuristic Discord automation bot built for protection, giveaways, moderation, utility, verification, and clean roleplay interactions.
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
@@ -83,11 +195,8 @@ export default function Home() {
                 <div className="panel-strong neon-border cut-corner rounded-[30px] p-5 md:p-6">
                   <div className="flex items-center gap-4 border-b border-cyan-300/10 pb-4">
                     <Image
-                      src="https://cdn.discordapp.com/emojis/1452185851370147880.gif"
+                      src={razePfp}
                       alt="RaZe logo"
-                      width={64}
-                      height={64}
-                      unoptimized
                       className="h-16 w-16 rounded-2xl border border-cyan-300/30 bg-black/60 object-cover p-1"
                     />
                     <div>
@@ -123,7 +232,7 @@ export default function Home() {
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               <InfoTile icon={ShieldCheck} title="Protection" text="Antinuke and whitelist controls for secure moderation." />
               <InfoTile icon={Sparkles} title="Giveaways" text="Clean giveaway flow with strict duration handling." />
-              <InfoTile icon={Globe2} title="Automation" text="Automod and logging designed for modern Discord servers." />
+              <InfoTile icon={Globe2} title="Automation" text="Automod, verification, and logging designed for modern Discord servers." />
               <InfoTile icon={Crown} title="Fun Mode" text="Anime GIF-driven roleplay and rating responses." />
             </div>
           </motion.div>
@@ -150,7 +259,7 @@ export default function Home() {
                 <InfoChip label="Developer" value="Ayush Pal" />
                 <InfoChip label="Website" value="ayush-pal.me" />
                 <InfoChip label="Primary focus" value="Security and automation" />
-                <InfoChip label="Style" value="Cyber-dashboard" />
+                <InfoChip label="Style" value="Cyber landing page" />
               </div>
             </div>
           </div>
@@ -198,6 +307,45 @@ export default function Home() {
               <Code2 className="h-4 w-4" />
               <span>Developer info is included for context, not as a separate dashboard.</span>
             </div>
+          </div>
+        </section>
+
+        <section className="space-y-6" id="commands">
+          <div className="flex items-center gap-3">
+            <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-3">
+              <Terminal className="h-5 w-5 text-cyan-200" />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.4em] text-cyan-200/70">Command list</p>
+              <h3 className="text-3xl font-semibold text-white">Every command, grouped by module</h3>
+            </div>
+          </div>
+
+          <div className="grid gap-5 xl:grid-cols-2">
+            {commandGroups.map((group) => {
+              const Icon = group.icon;
+              return (
+                <article key={group.title} className="panel neon-border cut-corner rounded-[30px] p-6 md:p-7">
+                  <div className="flex items-center gap-3 border-b border-cyan-300/10 pb-4">
+                    <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-3">
+                      <Icon className="h-5 w-5 text-cyan-200" />
+                    </div>
+                    <div>
+                      <h4 className="text-2xl font-semibold text-white">{group.title}</h4>
+                      <p className="mt-1 text-sm text-slate-400">{group.description}</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-5 space-y-3">
+                    {group.commands.map((command) => (
+                      <div key={command} className="rounded-2xl border border-white/8 bg-black/20 px-4 py-3 text-sm leading-6 text-slate-200 transition hover:border-cyan-300/25 hover:bg-cyan-300/5">
+                        <span className="font-mono text-cyan-100">{command}</span>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </section>
       </section>
