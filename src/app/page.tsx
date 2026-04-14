@@ -169,6 +169,14 @@ export default function Home() {
 
                 <div className="mt-7 flex flex-wrap gap-3">
                   <a
+                    href="https://discord.com/oauth2/authorize?client_id=1298287126290501732"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="cut-corner-sm border border-cyan-300/35 bg-cyan-300/20 px-5 py-3 text-sm font-semibold text-cyan-50 transition hover:bg-cyan-300/30"
+                  >
+                    Invite Bot
+                  </a>
+                  <a
                     href="https://ayush-pal.me"
                     target="_blank"
                     rel="noreferrer"
