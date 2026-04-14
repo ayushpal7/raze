@@ -5,8 +5,8 @@ import "./globals.css";
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "RAZE | Advanced Discord Defense",
-  description: "Elite Antinuke and Giveaway management for the next-gen Discord ecosystem.",
+  title: "RaZe | Protocol Dashboard",
+  description: "Next-generation server sovereignty and antinuke defense.",
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${spaceGrotesk.className} bg-[#050505] text-white overflow-x-hidden`}>
+      <body className={`${spaceGrotesk.className} bg-[#060606] text-white selection:bg-cyan-500 overflow-x-hidden`}>
         {children}
       </body>
     </html>
