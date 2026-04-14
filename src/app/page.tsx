@@ -231,10 +231,10 @@ export default function Home() {
               <InfoTile icon={ShieldCheck} title="Protection" text="Antinuke and whitelist controls for secure moderation." />
               <InfoTile icon={Sparkles} title="Giveaways" text="Clean giveaway flow with strict duration handling." />
               <InfoTile icon={Globe2} title="Automation" text="Automod, verification, and logging designed for modern Discord servers." />
-              </p>
+              <InfoTile icon={Crown} title="Fun Mode" text="Anime GIF-driven roleplay and rating responses." />
             </div>
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         <section className="panel neon-border cut-corner rounded-[32px] p-6 md:p-8">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
@@ -305,14 +305,14 @@ function InfoTile({
   text: string;
 }) {
   return (
-  );
-}
-
-function InfoChip({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-[20px] border border-cyan-300/10 bg-white/5 px-4 py-3">
-      <p className="text-[11px] uppercase tracking-[0.35em] text-slate-400">{label}</p>
-      <p className="mt-2 text-sm font-medium text-white">{value}</p>
+    <div className="rounded-[24px] border border-white/8 bg-black/20 p-5 transition hover:border-cyan-300/25 hover:bg-cyan-300/5">
+      <div className="flex items-center gap-3">
+        <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-3">
+          <Icon className="h-4 w-4 text-cyan-200" />
+        </div>
+        <h4 className="text-base font-semibold text-white">{title}</h4>
+      </div>
+      <p className="mt-4 text-sm leading-6 text-slate-300">{text}</p>
     </div>
   );
 }
