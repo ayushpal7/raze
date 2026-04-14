@@ -1,11 +1,26 @@
 {
+  "name": "raze-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
-    "next": "14.x",
-    "react": "18.x",
-    "react-dom": "18.x",
+    "next": "14.2.35",
+    "react": "^18",
+    "react-dom": "^18",
     "framer-motion": "latest",
     "lucide-react": "latest",
-    "typescript": "latest",
-    "tailwindcss": "latest"
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "postcss": "^8",
+    "tailwindcss": "^3"
   }
 }
